@@ -1,13 +1,9 @@
-import time
-from statistics import mean, stdev
-import torch
-from fastai.text.all import *
-
-"""
-I would like more uniform way to pass the metrics, no matter loss_func or metric,
-instantiate it and then pass.
-This uniform way also make it possible such as `metrics=[m() for m inTASK_METRICS[task]]`
-"""
+from fastai.text.all import (
+    Callback,
+    store_attr,
+    CancelFitException,
+    CancelEpochException,
+)
 
 
 class RunSteps(Callback):
