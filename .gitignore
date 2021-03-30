@@ -8,3 +8,4 @@ datasets/*
 checkpoints/*
 test_outputs/*
 venv
+data
