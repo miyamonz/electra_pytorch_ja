@@ -14,22 +14,6 @@ def Accuracy(axis=-1):
     return AvgMetric(partial(accuracy, axis=axis))
 
 
-@delegates()
-class MyMSELossFlat(BaseLoss):
-    def __init__(self, *args, axis=-1, floatify=True, low=None, high=None, **kwargs):
-        super().__init__(
-            nn.MSELoss, *args, axis=axis, floatify=floatify, is_2d=False, **kwargs
-        )
-        self.low, self.high = low, high
-
-    def decodes(self, x):
-        if self.low is not None:
-            x = torch.max(x, x.new_full(x.shape, self.low))
-        if self.high is not None:
-            x = torch.min(x, x.new_full(x.shape, self.high))
-        return x
-
-
 class Ensemble(nn.Module):
     def __init__(self, models, device="cuda:0", merge_out_fc=None):
         super().__init__()
