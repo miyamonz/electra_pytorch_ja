@@ -6,4 +6,5 @@ Pretrain.py: Pretrain.ipynb
 
 clear:
 	jupyter nbconvert --clear-output --inplace Pretrain.ipynb
+	jupyter nbconvert --clear-output --inplace Finetune_GLUE.ipynb
 
