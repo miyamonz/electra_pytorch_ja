@@ -505,6 +505,8 @@ class Wikipedia(datasets.BeamBasedBuilder):
         def _clean_content(inputs):
             """Cleans raw wikicode to extract text."""
             id_, title, raw_content = inputs
+            if int(id_) % 10000 == 0:
+                logger.info('clean content', id_)
             try:
                 text = _parse_and_clean_wikicode(raw_content, parser=mwparserfromhell)
             except (mwparserfromhell.parser.ParserError) as e:

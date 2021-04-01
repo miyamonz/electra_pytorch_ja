@@ -7,3 +7,6 @@ wandb>=0.10.4
 hugdatafast>=1.0.0
 jupyterlab
 ipywidgets
+
+apache_beam
+mwparserfromhell
