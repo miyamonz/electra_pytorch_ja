@@ -8,3 +8,5 @@ clear:
 	jupyter nbconvert --clear-output --inplace Pretrain.ipynb
 	jupyter nbconvert --clear-output --inplace Finetune_GLUE.ipynb
 
+jupyter:
+	jupyter lab --no-browser --NotebookApp.token='' --NotebookApp.password=''
