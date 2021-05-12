@@ -8,5 +8,10 @@ hugdatafast>=1.0.0
 jupyterlab
 ipywidgets
 
+# for download and convert wikipedia xml
 apache_beam
 mwparserfromhell
+
+# for japanese tokenizer
+fugashi
+unidic_lite
